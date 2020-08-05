@@ -49,10 +49,11 @@ export class AppComponent {
           this.emailSuccess = true
           this.id = this.resArr[0]._id
           this.loading = false
+          // console.log(this.object)
         })
     } else if (input == 'name') {
       this.loading = true
-      this.object[input] = this.name.substr(1)
+      // this.object[input] = this.name.substr(1)
       this.http.put(`${this.API}/users/${this.id}`, this.object)
         .subscribe((res) => {
           this.resArr = []
@@ -63,6 +64,7 @@ export class AppComponent {
           })
           this.nameSuccess = this.resArr[0].success
           this.loading = false
+          // console.log(this.object)
         })
     } else if (input == 'number') {
       this.loading = true
@@ -77,6 +79,7 @@ export class AppComponent {
           })
           this.numberSuccess = this.resArr[0].success
           this.loading = false
+          // console.log(this.object)
         })
     }
   }

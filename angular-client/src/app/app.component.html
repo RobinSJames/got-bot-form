@@ -179,8 +179,8 @@
       >Name</p>
       <input
         [(ngModel)]="name"
-        (focus)="isFocused = !isFocused"
-        (blur)="isFocused = !isFocused"
+        (focus)="isFocused = !isFocused; name = ''"
+        (blur)="isFocused = !isFocused; name = name"
         name="name"
         type="text"
         required
@@ -210,7 +210,7 @@
       >Phone number</p>
       <input
         [(ngModel)]="number"
-        (focus)="isFocused = !isFocused"
+        (focus)="isFocused = !isFocused; number = ''"
         (blur)="isFocused = !isFocused"
         type="text"
         class="input"
