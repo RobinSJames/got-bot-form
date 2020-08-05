@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+$gbBlue: #314057;
+$errRed: #f00;
+$bold: 600;
+
+.illustration_wrapper {
+  position: absolute;
+  bottom: -70px;
+  right: 0;
+
+  .illustration {
+    width: 75vw;
+
+    .sideHair {
+      transform-origin: center;
+      animation: face 2.7s linear 0s infinite alternate running;
+    }
+    .face {
+      transform-origin: center;
+      animation: face 2.7s linear 0s infinite alternate running;
+    }
+    .fringe {
+      transform-origin: center;
+      animation: fringe 2.7s linear 0s infinite alternate running;
+    }
+    .ponyTail {
+      transform-origin: top;
+      animation: ponyTail 2.7s ease-in 0s infinite alternate running;
+    }
+
+    @keyframes ponyTail {
+      0% {transform: rotate(1deg) translate(-192px, -234px);}
+      50% {transform: rotate(0deg) translate(-192px, -234px);}
+      100% {transform: rotate(1deg) translate(-192px, -234px);}
+    }
+    @keyframes face {
+      0% {transform: rotate(0deg) translate(0px, 0px);}
+      50% {transform: rotate(15deg) translate(-48px, -35px);}
+      100% {transform: rotate(0deg) translate(0px, 0px);}
+    }
+    @keyframes fringe {
+      0% {transform: rotate(0deg) translate(-192px, -234px);}
+      50% {transform: rotate(15deg) translate(-240px, -270px);}
+      100% {transform: rotate(0deg) translate(-192px, -234px);}
+    }
+  }
+
+}
+.wrapper{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  .input_wrapper {
+    position: relative;
+    margin: 1rem 0;
+
+    .label {
+      position: absolute;
+      text-transform: uppercase;
+      transform-origin: left;
+      transition: all 0.3s;
+      letter-spacing: 0.05rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #999;
+    }
+
+    .label-focus {
+      transform: translateY(-20px);
+      font-size: 0.7rem;
+      font-weight: $bold;
+      color: $gbBlue;
+    }
+
+    .input {
+      transition: all 0.2s;
+      outline: none;
+      border: 0;
+      box-shadow: none;
+      border-bottom: 1px solid #999;
+      color: $gbBlue;
+      font-size: 1rem;
+      padding-bottom: 0.2rem;
+    }
+    .input:focus {
+      border-bottom: 1px solid $gbBlue;
+    }
+    .input-error {
+      border-bottom: 1px solid $errRed;
+    }
+  }
+  .error_wrapper {
+    margin-bottom: 1rem;
+    .error {
+      color: $errRed;
+      font-weight: $bold;
+      font-size: 0.75rem;
+    }
+  }
+
+  .btn {
+    color: #fff;
+    background: $gbBlue;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    font-weight: $bold;
+    z-index: 3;
+    cursor: pointer;
+  }
+  .btn-disabled {
+    cursor: not-allowed;
+    background: #313131;
+  }
+  .results_wrapper {
+    margin: 0.25rem 0;
+    .key {
+      color: $gbBlue;
+      font-size: 0.75rem;
+      font-weight: $bold;
+      text-transform: uppercase;
+    }
+    .value {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
