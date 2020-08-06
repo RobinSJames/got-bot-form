@@ -41,7 +41,7 @@ export class AppComponent {
       this.http.post(`${this.API}/users/add`, this.object)
         .subscribe((res) => {
           this.resArr.push(res)
-          console.log(this.resArr)
+          // console.log(this.resArr)
           this.showToast(`Your ${input} was stored successfully`, `Saved ${this.email}`, {
             timeOut: 3000,
             positionClass: 'toast-top-right'
@@ -53,7 +53,7 @@ export class AppComponent {
         })
     } else if (input == 'name') {
       this.loading = true
-      // this.object[input] = this.name.substr(1)
+      this.object[input] = this.name
       this.http.put(`${this.API}/users/${this.id}`, this.object)
         .subscribe((res) => {
           this.resArr = []
