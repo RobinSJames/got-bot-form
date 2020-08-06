@@ -111,7 +111,7 @@
     alt="GotBot Logo"
     src="https://static.wixstatic.com/media/6d7220_30eabacaee0a457d981a64a82d54947a~mv2.png/v1/fill/w_100,h_17,al_c,q_85,usm_0.66_1.00_0.01/gotbot_logo.webp"
   />
-  <span>Welcome to the our form</span>
+  <span>Welcome to our simple form</span>
     <div class="spacer"></div>
 </div>
 
@@ -180,8 +180,7 @@
       <input
         [(ngModel)]="name"
         (focus)="isFocused = !isFocused; name = ''"
-        (blur)="isFocused = !isFocused; name = name"
-        name="name"
+        (blur)="isFocused = !isFocused"
         type="text"
         required
         class="input"
@@ -218,6 +217,7 @@
         pattern="^((?:\+27|27)|0)(\d{2})(\d{7})$"
         ngModel
         #numberref="ngModel"
+        [ngClass]="numberref.errors && (numberref.dirty || numberref.touched) ? 'input-error' : 'input'"
       />
     </div>
     <div *ngIf="numberref.errors && (numberref.dirty || numberref.touched)" class="error_wrapper">

@@ -121,6 +121,8 @@ $bold: 600;
   }
   .results_wrapper {
     margin: 0.25rem 0;
+    z-index: 3;
+    background-color: white;
     .key {
       color: $gbBlue;
       font-size: 0.75rem;
